@@ -1,9 +1,6 @@
-fetch("https://www.dnd5eapi.co/api/spells/acid-arrow")
-.then(res => {
-    console.log("All right!", res)
-    res.json().then(data => console.log("JSON DONE", data));
-})
-.catch(e => {
-    console.log("Error!", e)
-})
+const loadData = async () => {
+    const res = await fetch("https://www.dnd5eapi.co/api/classes/paladin");
+    const data = await res.json();
+    console.log(data)
+}
 
