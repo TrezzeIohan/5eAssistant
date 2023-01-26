@@ -1,4 +1,4 @@
-fetch("https://www.dnd5eapi.co/api/spells")
+fetch("https://www.dnd5eapi.co/api/spells/acid-arrow")
 .then(res => {
     console.log("All right!", res)
     res.json().then(data => console.log("JSON DONE", data));
@@ -6,3 +6,4 @@ fetch("https://www.dnd5eapi.co/api/spells")
 .catch(e => {
     console.log("Error!", e)
 })
+
