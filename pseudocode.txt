@@ -11,4 +11,4 @@
 Displaying the information:
 
 check wich category of information will be shown
-    display the information accordingly
+    display the information accordingly 
