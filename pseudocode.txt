@@ -10,7 +10,5 @@
 
 Displaying the information:
 
-If receives especific data: Make a row for each information
-    display the name of the data in a col and the information in another column
-
-If receives data for a lot, display the names of each item
+check wich category of information will be shown
+    display the information accordingly

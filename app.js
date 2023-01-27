@@ -9,7 +9,11 @@ const loadData = async () => {
     const data = await res.json();
     console.log(data);
 
-    document
+    return data;
+};
+
+// Will take the data from LoadData() and display it according to its category
+const displayData = function(category){
 
     for(let item in data){
         const h1 = document.createElement('h1');
@@ -19,11 +23,6 @@ const loadData = async () => {
         console.log(item);
         console.log(data[item]);
     }
-};
-
-// Will take the data from LoadData() and display it according to its category
-const displayData = function(category){
-    if (category == 
 }
 
 // Will call the loadData and the displayData when the search button is clicked
