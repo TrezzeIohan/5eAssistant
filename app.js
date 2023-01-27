@@ -1,3 +1,6 @@
+const dataContainer = document.querySelector('#dataContainer');
+
+// Will load the data
 const loadData = async () => {
 
     let searchTerm = ((document.querySelector("#search-term").value).toLowerCase()).replaceAll(' ', '-');
@@ -6,18 +9,26 @@ const loadData = async () => {
     const data = await res.json();
     console.log(data);
 
+    document
 
     for(let item in data){
         const h1 = document.createElement('h1');
-        h1.innerHTML = item.name;
+        h1.innerHTML = data[item];
+        dataContainer.append(h1);
 
         console.log(item);
         console.log(data[item]);
     }
-    
 };
 
+// Will take the data from LoadData() and display it according to its category
+const displayData = function(category){
+    if (category == 
+}
+
+// Will call the loadData and the displayData when the search button is clicked
+const loadAndDisplayData = function() {
+}
 
 const searchButton = document.querySelector("#searchButton");
-
-searchButton.addEventListener('click', loadData)
+searchButton.addEventListener('click', loadData);

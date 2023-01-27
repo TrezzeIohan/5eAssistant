@@ -6,3 +6,11 @@
 // Check the api's answer
 // If nothing is found, show a message
 // Else, display the information adequatedly
+
+
+Displaying the information:
+
+If receives especific data: Make a row for each information
+    display the name of the data in a col and the information in another column
+
+If receives data for a lot, display the names of each item
