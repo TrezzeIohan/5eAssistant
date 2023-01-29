@@ -11,8 +11,5 @@
 Displaying the information:
 
 check wich category of information will be shown
-<<<<<<< HEAD
     display the information accordingly
-=======
-    display the information accordingly   
->>>>>>> 781de9135230e1d9feb9020b1a3dd4d9a4a2c71f
+
