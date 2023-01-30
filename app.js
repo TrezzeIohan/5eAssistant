@@ -13,16 +13,60 @@ const loadData = async () => {
 };
 
 // Will take the data from LoadData() and display it according to its category
-const displayData = function(category){
+const displayData = function(category, data){
 
-    for(let item in data){
-        const h1 = document.createElement('h1');
-        h1.innerHTML = data[item];
-        dataContainer.append(h1);
+    if (category === "magic-items"){
+        // Target the data container div
+        const dataContainer = document.querySelector("#dataContainer");
 
-        console.log(item);
-        console.log(data[item]);
+        // Create and append the table to display the new data
+        const table = document.createElement("table");
+        table.classlist.add("table");
+        dataContainer.append(table);
+
+        // Create the table head
+        const tableHead = document.createElement("thead");
+        table.appendChild(tableHead);
+
+        // Create a table row for the th's
+        const tableRow = document.createElement("tr");
+        tableHead.appendChild(tableRow);
+
+        // Create the table h's
+        const thIndex = document.createElement("th");
+        thIndex.setAttribute("scope", "col");
+        thIndex.innerText("#")
+
+        const thName = document.createElement("th");
+        thName.setAttribute("scope", "col");
+        thName.innerText("Name");
+
+        const thDescription = document.createElement("th");
+        thDescription.setAttribute("scope", "col");
+        thDescription.innerText("Item Description");
+
+        const thRarity = document.createElement("th");
+        thRarity.setAttribute("scope", "col");
+        thRarity.innerText("RArity");
+
+
+
+
+        // Create the new elements
+        const h1 = document.createElement("h1");
+        h1.innerHTML = data['name'];
+        
+        const costQ = data.cost.quantity;
+        const costU = data.cost.unit;
+        const p = document.createElement("h1");
+
+
+        
+        
+
     }
+
+
 }
 
 // Will call the loadData and the displayData when the search button is clicked
