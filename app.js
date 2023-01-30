@@ -47,14 +47,22 @@ const displayData = function(category, data){
 
         const thRarity = document.createElement("th");
         thRarity.setAttribute("scope", "col");
-        thRarity.innerText("RArity");
+        thRarity.innerText("Rarity");
+
+
+        // Create the table body
+        const tableBody = document.createElement("tbody");
+        table.appendChild(tableBody);
+
+        // Create tr
+        const tRow = document.createElement("tr");
+        tableBody.appendChild(tRow);
+        
 
 
 
 
-        // Create the new elements
-        const h1 = document.createElement("h1");
-        h1.innerHTML = data['name'];
+        
         
         const costQ = data.cost.quantity;
         const costU = data.cost.unit;
