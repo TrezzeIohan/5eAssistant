@@ -7,7 +7,7 @@ const loadData = async () => {
     let category = document.querySelector("#category").value;
     const res = await fetch(`https://www.dnd5eapi.co/api/${category}/${searchTerm}`);
     const data = await res.json();
-    console.log(data);
+    console.log(data.desc[1]);
 
     return data;
 };
@@ -41,13 +41,15 @@ const displayData = function(category, data){
         thName.setAttribute("scope", "col");
         thName.innerText("Name");
 
+        const thRarity = document.createElement("th");
+        thRarity.setAttribute("scope", "col");
+        thRarity.innerText("Rarity");
+
         const thDescription = document.createElement("th");
         thDescription.setAttribute("scope", "col");
         thDescription.innerText("Item Description");
 
-        const thRarity = document.createElement("th");
-        thRarity.setAttribute("scope", "col");
-        thRarity.innerText("Rarity");
+        
 
 
         // Create the table body
@@ -57,21 +59,27 @@ const displayData = function(category, data){
         // Create tr
         const tRow = document.createElement("tr");
         tableBody.appendChild(tRow);
-        
 
+        // Create the th and append it the TRow
+        const thData = document.createElement("th");
+        thData.setAttribute("scope", "row");
+        tRow.appendChild(thData);
 
+        //Create the table cols and append to the TRow
+        const tdName = document.createElement("td");
+        const name = data.name;
+        tdName.innerText = name;
+        tRow.appendChild = tdName;
 
+        const tdRarity= document.createElement("td");
+        const rarity = data.desc[0];
+        tdRarity.innerText = rarity;
+        tRow.appendChild = tdRarity;
 
-        
-        
-        const costQ = data.cost.quantity;
-        const costU = data.cost.unit;
-        const p = document.createElement("h1");
-
-
-        
-        
-
+        const tdDesc= document.createElement("td");
+        const description = data.desc[0];
+        tdDesc.innerText = description;
+        tRow.appendChild = tdDesc;
     }
 
 
