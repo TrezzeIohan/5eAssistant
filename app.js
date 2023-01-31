@@ -1,13 +1,11 @@
 const dataContainer = document.querySelector('#dataContainer');
 
 // Will load the data
-const loadData = async () => {
+const loadData = async (category, searchTerm) => {
 
-    let searchTerm = ((document.querySelector("#search-term").value).toLowerCase()).replaceAll(' ', '-');
-    let category = document.querySelector("#category").value;
     const res = await fetch(`https://www.dnd5eapi.co/api/${category}/${searchTerm}`);
     const data = await res.json();
-    console.log(data.desc[1]);
+    //console.log(data);
 
     return data;
 };
@@ -21,33 +19,38 @@ const displayData = function(category, data){
 
         // Create and append the table to display the new data
         const table = document.createElement("table");
-        table.classlist.add("table");
+        table.classList.add("table");
         dataContainer.append(table);
 
         // Create the table head
         const tableHead = document.createElement("thead");
+        //tableHead.classList.add("thead-dark");
         table.appendChild(tableHead);
 
         // Create a table row for the th's
         const tableRow = document.createElement("tr");
         tableHead.appendChild(tableRow);
 
-        // Create the table h's
+        // Create adn append the table h's
         const thIndex = document.createElement("th");
         thIndex.setAttribute("scope", "col");
-        thIndex.innerText("#")
+        thIndex.textContent = "#";
+        tableRow.appendChild(thIndex);
 
         const thName = document.createElement("th");
         thName.setAttribute("scope", "col");
-        thName.innerText("Name");
+        thName.textContent = "Name";
+        tableRow.appendChild(thName);
 
         const thRarity = document.createElement("th");
         thRarity.setAttribute("scope", "col");
-        thRarity.innerText("Rarity");
+        thRarity.textContent = "Rarity";
+        tableRow.appendChild(thRarity);
 
         const thDescription = document.createElement("th");
         thDescription.setAttribute("scope", "col");
-        thDescription.innerText("Item Description");
+        thDescription.textContent = "Item Description";
+        tableRow.appendChild(thDescription);
 
         
 
@@ -69,17 +72,17 @@ const displayData = function(category, data){
         const tdName = document.createElement("td");
         const name = data.name;
         tdName.innerText = name;
-        tRow.appendChild = tdName;
+        tRow.appendChild(tdName);
 
         const tdRarity= document.createElement("td");
         const rarity = data.desc[0];
         tdRarity.innerText = rarity;
-        tRow.appendChild = tdRarity;
+        tRow.appendChild(tdRarity);
 
         const tdDesc= document.createElement("td");
-        const description = data.desc[0];
+        const description = data.desc[1];
         tdDesc.innerText = description;
-        tRow.appendChild = tdDesc;
+        tRow.appendChild(tdDesc);
     }
 
 
@@ -87,7 +90,19 @@ const displayData = function(category, data){
 
 // Will call the loadData and the displayData when the search button is clicked
 const loadAndDisplayData = function() {
+    // Search term and category
+    let searchTerm = ((document.querySelector("#search-term").value).toLowerCase()).replaceAll(' ', '-');
+    let category = document.querySelector("#category").value;
+    
+    //Load Data
+    data = loadData(category, searchTerm);
+    data.then(data =>{
+        console.log(data);
+        displayData(category, data)
+    });
+    
+    
 }
 
 const searchButton = document.querySelector("#searchButton");
-searchButton.addEventListener('click', loadData);
+searchButton.addEventListener('click', loadAndDisplayData);
