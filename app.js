@@ -12,45 +12,45 @@ const loadData = async (category, searchTerm) => {
 // This function will display data when no search term is given
 const displaAllOptions = function(data){
     console.log(data);
-          // Create the data container
-          const dataContainer = document.querySelector("#dataContainer");
+    // Create the data container
+    const dataContainer = document.querySelector("#dataContainer");
 
-          // Create and append the table to display the new data
-          const table = document.createElement("table");
-          table.setAttribute("id", "newTable");
-          table.classList.add("table");
-          table.classList.add("table-dark")
-          table.classList.add("m-0");
-          dataContainer.append(table);
+    // Create and append the table to display the new data
+    const table = document.createElement("table");
+    table.setAttribute("id", "newTable");
+    table.classList.add("table");
+    table.classList.add("table-dark")
+    table.classList.add("m-0");
+    dataContainer.append(table);
   
-          // Create the table head
-          const tableHead = document.createElement("thead");
-          //tableHead.classList.add("thead-light");
-          table.appendChild(tableHead);
+    // Create the table head
+    const tableHead = document.createElement("thead");
+    //tableHead.classList.add("thead-light");
+    table.appendChild(tableHead);
   
-          // Create a table row for the th's
-          const tableRow = document.createElement("tr");
-          tableHead.appendChild(tableRow);
+    // Create a table row for the th's
+    const tableRow = document.createElement("tr");
+    tableHead.appendChild(tableRow);
   
-          // Create adn append the table h's
-          const thIndex = document.createElement("th");
-          thIndex.setAttribute("scope", "col");
-          thIndex.textContent = "#";
-          tableRow.appendChild(thIndex);
+    // Create adn append the table h's
+    const thIndex = document.createElement("th");
+    thIndex.setAttribute("scope", "col");
+    thIndex.textContent = "#";
+    tableRow.appendChild(thIndex);
   
-          const thName = document.createElement("th");
-          thName.setAttribute("scope", "col");
-          thName.textContent = "Name";
-          tableRow.appendChild(thName);
+    const thName = document.createElement("th");
+    thName.setAttribute("scope", "col");
+    thName.textContent = "Name";
+    tableRow.appendChild(thName);
   
   
   
-          // Create the table body
-          const tableBody = document.createElement("tbody");
-          table.appendChild(tableBody);
+    // Create the table body
+    const tableBody = document.createElement("tbody");
+    table.appendChild(tableBody);
+
+    // Displaying every element
     (data.results).forEach((el) => {
-  
-
         // Create tr
         const tRow = document.createElement("tr");
         tableBody.appendChild(tRow);
@@ -65,10 +65,7 @@ const displaAllOptions = function(data){
         const name = el.name;
         tdName.innerText = name;
         tRow.appendChild(tdName);
-
-    })
-
-    
+    })  
 }
 
 // Will take the data from LoadData() and display it according to its category
