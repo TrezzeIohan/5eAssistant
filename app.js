@@ -9,10 +9,75 @@ const loadData = async (category, searchTerm) => {
     return data;
 };
 
-// Will take the data from LoadData() and display it according to its category
-const displayData = function(category, data){
+// This function will display data when no search term is given
+const displaAllOptions = function(data){
+    console.log(data);
+          // Create the data container
+          const dataContainer = document.querySelector("#dataContainer");
 
-    if (category === "magic-items"){
+          // Create and append the table to display the new data
+          const table = document.createElement("table");
+          table.setAttribute("id", "newTable");
+          table.classList.add("table");
+          table.classList.add("table-dark")
+          table.classList.add("m-0");
+          dataContainer.append(table);
+  
+          // Create the table head
+          const tableHead = document.createElement("thead");
+          //tableHead.classList.add("thead-light");
+          table.appendChild(tableHead);
+  
+          // Create a table row for the th's
+          const tableRow = document.createElement("tr");
+          tableHead.appendChild(tableRow);
+  
+          // Create adn append the table h's
+          const thIndex = document.createElement("th");
+          thIndex.setAttribute("scope", "col");
+          thIndex.textContent = "#";
+          tableRow.appendChild(thIndex);
+  
+          const thName = document.createElement("th");
+          thName.setAttribute("scope", "col");
+          thName.textContent = "Name";
+          tableRow.appendChild(thName);
+  
+  
+  
+          // Create the table body
+          const tableBody = document.createElement("tbody");
+          table.appendChild(tableBody);
+    (data.results).forEach((el) => {
+  
+
+        // Create tr
+        const tRow = document.createElement("tr");
+        tableBody.appendChild(tRow);
+
+        // Create the th and append it the TRow
+        const thData = document.createElement("th");
+        thData.setAttribute("scope", "row");
+        tRow.appendChild(thData);
+
+        //Create the table cols and append to the TRow
+        const tdName = document.createElement("td");
+        const name = el.name;
+        tdName.innerText = name;
+        tRow.appendChild(tdName);
+
+    })
+
+    
+}
+
+// Will take the data from LoadData() and display it according to its category
+const displayData = function(category, data, searchTerm){
+
+    if (searchTerm === ""){
+        displaAllOptions(data);
+    }
+    else if (category === "magic-items"){
         // Target the data container div
         const dataContainer = document.querySelector("#dataContainer");
 
@@ -251,7 +316,7 @@ const loadAndDisplayData = function() {
     data = loadData(category, searchTerm);
     data.then(data =>{
         //console.log(data);
-        displayData(category, data)
+        displayData(category, data, searchTerm)
     });
     
     
