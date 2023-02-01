@@ -19,6 +19,7 @@ const displayData = function(category, data){
 
         // Create and append the table to display the new data
         const table = document.createElement("table");
+        table.setAttribute("id", "newTable")
         table.classList.add("table");
         table.classList.add("table-dark")
         table.classList.add("m-0");
@@ -241,6 +242,11 @@ const loadAndDisplayData = function() {
     let searchTerm = ((document.querySelector("#search-term").value).toLowerCase()).replaceAll(' ', '-');
     let category = document.querySelector("#category").value;
     
+    let table = document.getElementById("newTable")
+    if (table !== null){
+        table.remove();
+    }
+
     //Load Data
     data = loadData(category, searchTerm);
     data.then(data =>{
