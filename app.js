@@ -167,6 +167,9 @@ const displayData = function(category, data){
         tdAlig.innerText = alig;
         tRow.appendChild(tdAlig);
     }
+    else if (category === "rule-sections"){
+
+    }
 
 
 }
