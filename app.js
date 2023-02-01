@@ -5,7 +5,6 @@ const loadData = async (category, searchTerm) => {
 
     const res = await fetch(`https://www.dnd5eapi.co/api/${category}/${searchTerm}`);
     const data = await res.json();
-    //console.log(data);
 
     return data;
 };
@@ -94,6 +93,7 @@ const displayData = function(category, data){
         // Create and append the table to display the new data
         const table = document.createElement("table");
         table.classList.add("table");
+        table.setAttribute("id", "newTable");
         table.classList.add("table-dark");
         table.classList.add("m-0");
         dataContainer.append(table);
@@ -177,6 +177,7 @@ const displayData = function(category, data){
         // Create and append the table to display the new data
         const table = document.createElement("table");
         table.classList.add("table");
+        table.setAttribute("id", "newTable");
         table.classList.add("table-dark");
         table.classList.add("m-0");
         dataContainer.append(table);
@@ -232,7 +233,6 @@ const displayData = function(category, data){
         tdDesc.innerText = desc;
         tRow.appendChild(tdDesc);
     }
-
 
 }
 
