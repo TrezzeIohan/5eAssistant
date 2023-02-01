@@ -168,7 +168,86 @@ const displayData = function(category, data){
         tRow.appendChild(tdAlig);
     }
     else if (category === "rule-sections"){
+        // Target the data container div
+        const dataContainer = document.querySelector("#dataContainer");
 
+        // Create and append the table to display the new data
+        const table = document.createElement("table");
+        table.classList.add("table");
+        table.classList.add("table-dark")
+        dataContainer.append(table);
+
+        // Create the table head
+        const tableHead = document.createElement("thead");
+        //tableHead.classList.add("thead-light");
+        table.appendChild(tableHead);
+
+        // Create a table row for the th's
+        const tableRow = document.createElement("tr");
+        tableHead.appendChild(tableRow);
+
+        // Create adn append the table h's
+        const thIndex = document.createElement("th");
+        thIndex.setAttribute("scope", "col");
+        thIndex.textContent = "#";
+        tableRow.appendChild(thIndex);
+
+        const thRace = document.createElement("th");
+        thRace.setAttribute("scope", "col");
+        thRace.textContent = "Race";
+        tableRow.appendChild(thRace);
+
+        const thSpeed = document.createElement("th");
+        thSpeed.setAttribute("scope", "col");
+        thSpeed.textContent = "Speed";
+        tableRow.appendChild(thSpeed);
+
+        const thAge = document.createElement("th");
+        thAge.setAttribute("scope", "col");
+        thAge.textContent = "Age";
+        tableRow.appendChild(thAge);
+
+        const thAlig = document.createElement("th");
+        thAlig.setAttribute("scope", "col");
+        thAlig.textContent = "Alignment";
+        tableRow.appendChild(thAlig);
+
+        
+
+
+        // Create the table body
+        const tableBody = document.createElement("tbody");
+        table.appendChild(tableBody);
+
+        // Create tr
+        const tRow = document.createElement("tr");
+        tableBody.appendChild(tRow);
+
+        // Create the th and append it the TRow
+        const thData = document.createElement("th");
+        thData.setAttribute("scope", "row");
+        tRow.appendChild(thData);
+
+        //Create the table cols and append to the TRow
+        const tdName = document.createElement("td");
+        const name = data.name;
+        tdName.innerText = name;
+        tRow.appendChild(tdName);
+
+        const tdSpeed= document.createElement("td");
+        const speed = data.speed;
+        tdSpeed.innerText = speed;
+        tRow.appendChild(tdSpeed);
+
+        const tdAge= document.createElement("td");
+        const age = data.age;
+        tdAge.innerText = age;
+        tRow.appendChild(tdAge);
+
+        const tdAlig= document.createElement("td");
+        const alig = data.alignment;
+        tdAlig.innerText = alig;
+        tRow.appendChild(tdAlig);
     }
 
 
