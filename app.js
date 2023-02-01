@@ -110,20 +110,25 @@ const displayData = function(category, data){
         thIndex.textContent = "#";
         tableRow.appendChild(thIndex);
 
-        const thName = document.createElement("th");
-        thName.setAttribute("scope", "col");
-        thName.textContent = "Name";
-        tableRow.appendChild(thName);
+        const thRace = document.createElement("th");
+        thRace.setAttribute("scope", "col");
+        thRace.textContent = "Race";
+        tableRow.appendChild(thRace);
 
-        const thRarity = document.createElement("th");
-        thRarity.setAttribute("scope", "col");
-        thRarity.textContent = "Rarity";
-        tableRow.appendChild(thRarity);
+        const thSpeed = document.createElement("th");
+        thSpeed.setAttribute("scope", "col");
+        thSpeed.textContent = "Speed";
+        tableRow.appendChild(thSpeed);
 
-        const thDescription = document.createElement("th");
-        thDescription.setAttribute("scope", "col");
-        thDescription.textContent = "Item Description";
-        tableRow.appendChild(thDescription);
+        const thAge = document.createElement("th");
+        thAge.setAttribute("scope", "col");
+        thAge.textContent = "Age";
+        tableRow.appendChild(thAge);
+
+        const thAlig = document.createElement("th");
+        thAlig.setAttribute("scope", "col");
+        thAlig.textContent = "Alignment";
+        tableRow.appendChild(thAlig);
 
         
 
@@ -147,15 +152,20 @@ const displayData = function(category, data){
         tdName.innerText = name;
         tRow.appendChild(tdName);
 
-        const tdRarity= document.createElement("td");
-        const rarity = data.desc[0];
-        tdRarity.innerText = rarity;
-        tRow.appendChild(tdRarity);
+        const tdSpeed= document.createElement("td");
+        const speed = data.speed;
+        tdSpeed.innerText = speed;
+        tRow.appendChild(tdSpeed);
 
-        const tdDesc= document.createElement("td");
-        const description = data.desc[1];
-        tdDesc.innerText = description;
-        tRow.appendChild(tdDesc);
+        const tdAge= document.createElement("td");
+        const age = data.age;
+        tdAge.innerText = age;
+        tRow.appendChild(tdAge);
+
+        const tdAlig= document.createElement("td");
+        const alig = data.alignment;
+        tdAlig.innerText = alig;
+        tRow.appendChild(tdAlig);
     }
 
 
