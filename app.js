@@ -21,6 +21,7 @@ const displayData = function(category, data){
         const table = document.createElement("table");
         table.classList.add("table");
         table.classList.add("table-dark")
+        table.classList.add("m-0");
         dataContainer.append(table);
 
         // Create the table head
@@ -92,7 +93,8 @@ const displayData = function(category, data){
         // Create and append the table to display the new data
         const table = document.createElement("table");
         table.classList.add("table");
-        table.classList.add("table-dark")
+        table.classList.add("table-dark");
+        table.classList.add("m-0");
         dataContainer.append(table);
 
         // Create the table head
@@ -174,7 +176,8 @@ const displayData = function(category, data){
         // Create and append the table to display the new data
         const table = document.createElement("table");
         table.classList.add("table");
-        table.classList.add("table-dark")
+        table.classList.add("table-dark");
+        table.classList.add("m-0");
         dataContainer.append(table);
 
         // Create the table head
