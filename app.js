@@ -192,26 +192,15 @@ const displayData = function(category, data){
         thIndex.textContent = "#";
         tableRow.appendChild(thIndex);
 
-        const thRace = document.createElement("th");
-        thRace.setAttribute("scope", "col");
-        thRace.textContent = "Race";
-        tableRow.appendChild(thRace);
+        const thRules = document.createElement("th");
+        thRules.setAttribute("scope", "col");
+        thRules.textContent = "Rules";
+        tableRow.appendChild(thRules);
 
-        const thSpeed = document.createElement("th");
-        thSpeed.setAttribute("scope", "col");
-        thSpeed.textContent = "Speed";
-        tableRow.appendChild(thSpeed);
-
-        const thAge = document.createElement("th");
-        thAge.setAttribute("scope", "col");
-        thAge.textContent = "Age";
-        tableRow.appendChild(thAge);
-
-        const thAlig = document.createElement("th");
-        thAlig.setAttribute("scope", "col");
-        thAlig.textContent = "Alignment";
-        tableRow.appendChild(thAlig);
-
+        const thDesc = document.createElement("th");
+        thDesc.setAttribute("scope", "col");
+        thDesc.textContent = "Description";
+        tableRow.appendChild(thDesc);
         
 
 
@@ -234,20 +223,10 @@ const displayData = function(category, data){
         tdName.innerText = name;
         tRow.appendChild(tdName);
 
-        const tdSpeed= document.createElement("td");
-        const speed = data.speed;
-        tdSpeed.innerText = speed;
-        tRow.appendChild(tdSpeed);
-
-        const tdAge= document.createElement("td");
-        const age = data.age;
-        tdAge.innerText = age;
-        tRow.appendChild(tdAge);
-
-        const tdAlig= document.createElement("td");
-        const alig = data.alignment;
-        tdAlig.innerText = alig;
-        tRow.appendChild(tdAlig);
+        const tdDesc = document.createElement("td");
+        const desc = (data.desc).replaceAll('#', '');
+        tdDesc.innerText = desc;
+        tRow.appendChild(tdDesc);
     }
 
 
