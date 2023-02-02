@@ -3,9 +3,10 @@
 
 
 
-<img src="5eAssistant.png" alt="Tela do Site">
+<a href="https://trezzeiohan.github.io/5eAssistant/"><img src="5eAssistant.png" alt="Tela do Site"></a>
 
-> Site de busca de informações sobre D&D5e usando a API: https://www.dnd5eapi.co/.
+> Link do site: https://trezzeiohan.github.io/5eAssistant/
+> Site de busca de informações sobre D&D5e usando a API: https://www.dnd5eapi.co/
 
 ### Ajustes e melhorias
 
