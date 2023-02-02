@@ -65,6 +65,9 @@ const displaAllOptions = function(data){
         const name = el.name;
         tdName.innerText = name;
         tRow.appendChild(tdName);
+        
+        // Add a function that will display specific data when the element is clicked
+        tdName.addEventListener('click',)
     })  
 }
 
