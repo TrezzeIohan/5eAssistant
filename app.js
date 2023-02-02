@@ -76,7 +76,7 @@ const displaAllOptions = function(data){
         tRow.style.cursor = "pointer";
 
         // Add a function that will display specific data when the element is clicked
-        tdName.addEventListener('click', loadAndDisplayElData(elUrl))
+        tdName.addEventListener('click', function(){loadAndDisplayElData(elUrl)})
     })  
 }
 
