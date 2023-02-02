@@ -2,7 +2,7 @@ const dataContainer = document.querySelector('#dataContainer');
 
 // Will load the data
 const loadData = async (category, searchTerm) => {
-
+    
     const res = await fetch(`https://www.dnd5eapi.co/api/${category}/${searchTerm}`);
     const data = await res.json();
 
@@ -100,7 +100,6 @@ const displayData = function(category, data, searchTerm){
 
         // Create the table head
         const tableHead = document.createElement("thead");
-        //tableHead.classList.add("thead-light");
         table.appendChild(tableHead);
 
         // Create a table row for the th's
@@ -325,7 +324,39 @@ const loadAndDisplayData = function() {
     data = loadData(category, searchTerm);
     data.then(data =>{
         //console.log(data);
-        displayData(category, data, searchTerm)
+        try{
+            displayData(category, data, searchTerm)
+        }
+        catch(e){
+            //In case of error, clean the table section and display a message
+            let table = document.getElementById("newTable");
+            if (table !== null){
+            table.remove();
+            }
+            const dataContainer = document.querySelector("#dataContainer");
+
+            // Create and append the table to display the new data
+            const tableA = document.createElement("table");
+            tableA.setAttribute("id", "newTable");
+            tableA.classList.add("table");
+            tableA.classList.add("table-dark")
+            tableA.classList.add("m-0");
+            dataContainer.append(tableA);
+    
+            // Create the table head
+            const tableHead = document.createElement("thead");
+            tableA.appendChild(tableHead);
+    
+            // Create a table row for the th's
+            const tableRow = document.createElement("tr");
+            tableHead.appendChild(tableRow);
+    
+            // Create adn append the table h's
+            const thIndex = document.createElement("th");
+            thIndex.setAttribute("scope", "col");
+            thIndex.textContent = "No results found.";
+            tableRow.appendChild(thIndex);
+        }
     });
     
     

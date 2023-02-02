@@ -17,9 +17,14 @@ check wich category of information will be shown
 
 
 ToDos
-    Make a functionality to show all results when a search is made without it's search terms - Done
+ *   Make a functionality to show all results when a search is made without it's search terms - Done
         make it in a way that when someone clicks on a name, it redirects to a page with the 
-        specific content - 
+        specific content - Done
             When td is clicked => loadAndDisplayData using the inner html as params
 
-    Make a functionality that displays a "sorry" page when the term is not found    
+   * Make a functionality that displays a "sorry" page when the term is not found -  Done
+
+   Refactor the code - 
+   Implement the other categories -
+
+
